@@ -121,7 +121,7 @@
         <code>
             pip install scipy
         </code>
-        For conda you can install SciPy by running the following command in your terminal:
+        For conda you can install SciPy by running the following command in your terminal: <br>
         <code>
             conda install scipy
         </code>
@@ -136,26 +136,26 @@
     To import the constants subpackage: <br>
     <code>from scipy.integrate as integrate</code><br>
     The constants subpackage contains math and physics constants such as pi, the speed of light, and the mass of a proton:
-    <code>print(constants.speed_of_light)</code>
-    The library also allows you to convert units from the imperial system to SI units:
-    For example, if you would like to convert 5 pounds to kilograms, you can type the following:
+    <code>print(constants.speed_of_light)</code> <br>
+    The library also allows you to convert units from the imperial system to SI units.
+    For example, if you would like to convert 5 pounds to kilograms, you can type the following: <br>
     <code>print(5*constants.lb)</code>
     </div>
     <h4>Integration Subpackage</h4>
     <div>
         The integration subpackage is used for calculating definite integrals. For example, suppose you have the function y^2 + 3y and want to calculate the integral from 0 to 2 of the function. We will set the function equal to a variable g: <br>
-        g = lambda y: y**2 + 3*y <br>
+        <code>g = lambda y: y**2 + 3*y </code><br>
         We can calculate the integral from 0 to 2 by using the quad method provided by the Integration Subpackage: <br>
-        print(integrate.quad(g,0,2)) <br>
+        <code>print(integrate.quad(g,0,2)) </code><br>
         The first parameter of the method is the function and the second 2 are the lower and upper bounds of the integration. When we run the code, we will get the result in the form of a coordinate pair of numbers. The first number is the answer and the second number is the degree of error. 
     </div>
     <h4>Linear Algebra Subpackage</h4>
     <div>
         The linear algebra subpackage contains many methods for manipulating and computing matrices. One such method is inv method. It is used for finding the inverse of a 2d array or a matrix.
         For example, say you have the following array: <br>
-        arr2d = np.array([[1,2,3],[4,5,6],[7,8,9]])<br>
+        <code>arr2d = np.array([[1,2,3],[4,5,6],[7,8,9]])</code><br>
         To find the inverse we can do the following: <br>
-        print(linalg.inv(arr2d)) <br>
+        <code>print(linalg.inv(arr2d))</code> <br>
         This will print the inverse of arr2d in which the rows and columns are swapped. 
     </div>
 </body>
