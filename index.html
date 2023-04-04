@@ -8,7 +8,7 @@
     <h1>Python NumPy SciPy</h1>
     <h2>Marc Jiang, Thomas Zhang<br>Period 7</h2>
 
-    <h3>NumPy</h3>
+    <h2>NumPy</h2>
     <h4>How to Install</h4>
     <div>
         You can install NumPy using pip or conda. For pip, you can install NumPy by running the following command in your terminal:
@@ -26,10 +26,10 @@
     </div>
     <h4>How do NumPy Arrays Work?</h4>
     <div>
-        The NumPy library is coded in C and Fortran, two compiled languages that are highly optimized for speed and math. An important difference between Python lists and NumPy arrays are that NumPy arrays are stored contiguously in memory and are homogenous, while Python lists are not.
+        The NumPy library is coded in C and Fortran, two compiled languages that are highly optimized for speed and math. An important difference between Python lists and NumPy arrays are that NumPy arrays are stored contiguously in memory and are homogenous, while Python lists are not.<br>
         <img src="./images/array.png" alt ="NumPy Array in Memory">
         <img src="./images/list.png" alt="Python List in Memory">
-        To the left is a diagram showing a NumPy array in memory. Each element is adjacent to each other, which makes accessing each element extremely fast. To the right is a diagram showing a Python list in memory. Each element holds a pointer to the actual value, rather than the value itself. Although this does allow lists to hold elements of different types (hence heterogenous), it takes much more time to access each element since they are spread out in memory. Another upside of a homogenous array is that python doesn't have to check the type of each element when performing operations on the array. This also allows for vectorization, which is the process of performing operations on the entire array at once.
+        <br><br>To the left is a diagram showing a NumPy array in memory. Each element is adjacent to each other, which makes accessing each element extremely fast. To the right is a diagram showing a Python list in memory. Each element holds a pointer to the actual value, rather than the value itself. Although this does allow lists to hold elements of different types (hence heterogenous), it takes much more time to access each element since they are spread out in memory. Another upside of a homogenous array is that python doesn't have to check the type of each element when performing operations on the array. This also allows for vectorization, which is the process of performing operations on the entire array at once.
     </div>
     <div>
         <h4>Initializing NumPy Arrays</h4>
@@ -79,8 +79,42 @@
                 arr2 = np.array([6,7,8,9,10])<br>
                 arr3 = arr1 + arr2<br>  
             </code>
-    </div>
-    <h3>SciPy</h3>
+        </div>
+        <h4>Built in Methods</h4>
+        <div>
+            NumPy comes with many built in methods to help with computations and data collection. For example you can find the sum of all elements in an array by doing:
+            <br>
+            <code>
+                arr = np.array([1,2,3,4,5])<br>
+                sum = arr.sum()<br>
+            </code><br>
+            You can also find the mean, standard deviation, variance, min and max by doing:
+            <br>
+            <code>
+                mean = arr.mean()<br>
+                std = arr.std()<br>
+                var = arr.var()<br>
+                min = arr.min()<br>
+                max = arr.max()<br>
+            </code>
+        </div>
+        <h4>Booleans</h4>
+        <div>
+            NumPy also allows you to use booleans to filter through arrays. For example, if you would like to find all elements in an array that are greater than 5, you can do:
+            <br>
+            <code>
+                arr = np.array([1,2,3,4,5,6,7,8,9,10])<br>
+                arr2 = arr[arr > 5]<br>
+            </code>
+            <br>
+            This will return an array of all elements in arr that are greater than 5. This can also be paired with <code>and</code> and <code>or</code> operators. You can find all elements in an array that are greater than 5 and less than 10 with:
+            <br>
+            <code>
+                arr2 = arr[(arr > 5) and (arr < 10)]<br>
+            </code>
+            <br>
+        </div>
+    <h2>SciPy</h2>
     <h4>How to Install</h4>
     <p>
         You can install SciPy using pip or conda. For pip, you can install NumPy by running the following command in your terminal:
@@ -94,15 +128,14 @@
     </p>
     <h4>About SciPy</h4>
     <div>
-        SciPy is a libaray that extends NumPy and its provided arrays and other key functionalities. It is used for more complex scientific computations and for visualizing data. The library consists of the following subpackages: /n
-        Integration, Optimization, Interpolation, Fourier Transformations, Signal Processing, Linear Algebra, Compressed Sparse Graph Routines, Spatial data structures and algorithms, Statistics, Multidimensional image processing
+        SciPy is a library that extends NumPy and its provided arrays and other key functionalities. It is used for more complex scientific computations and for visualizing data. The library consists of the following subpackages: 
+        <br> Integration, Optimization, Interpolation, Fourier Transformations, Signal Processing, Linear Algebra, Compressed Sparse Graph Routines, Spatial data structures and algorithms, Statistics, Multidimensional image processing
     </div>
     <h4>Constants Subpackage</h4>
     <div>
-    To import the constants subpackage:
-    <code>from scipy.integrate as integrate</code>
+    To import the constants subpackage: <br>
+    <code>from scipy.integrate as integrate</code><br>
     The constants subpackage contains math and physics constants such as pi, the speed of light, and the mass of a proton:
-    
     <code>print(constants.speed_of_light)</code>
     The library also allows you to convert units from the imperial system to SI units:
     For example, if you would like to convert 5 pounds to kilograms, you can type the following:
@@ -110,9 +143,20 @@
     </div>
     <h4>Integration Subpackage</h4>
     <div>
+        The integration subpackage is used for calculating definite integrals. For example, suppose you have the function y^2 + 3y and want to calculate the integral from 0 to 2 of the function. We will set the function equal to a variable g: <br>
+        g = lambda y: y**2 + 3*y <br>
+        We can calculate the integral from 0 to 2 by using the quad method provided by the Integration Subpackage: <br>
+        print(integrate.quad(g,0,2)) <br>
+        The first parameter of the method is the function and the second 2 are the lower and upper bounds of the integration. When we run the code, we will get the result in the form of a coordinate pair of numbers. The first number is the answer and the second number is the degree of error. 
     </div>
     <h4>Linear Algebra Subpackage</h4>
     <div>
-    The quad function is used to compute definite integrals. Suppose you wanted to compute the integral of x^2 + 2x from     </div>
+        The linear algebra subpackage contains many methods for manipulating and computing matrices. One such method is inv method. It is used for finding the inverse of a 2d array or a matrix.
+        For example, say you have the following array: <br>
+        arr2d = np.array([[1,2,3],[4,5,6],[7,8,9]])<br>
+        To find the inverse we can do the following: <br>
+        print(linalg.inv(arr2d)) <br>
+        This will print the inverse of arr2d in which the rows and columns are swapped. 
+    </div>
 </body>
 </html>
